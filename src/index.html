@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/script.js" defer></script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
     <title>COOL CREDIT</title>
   </head>
   <body>
@@ -166,8 +172,127 @@
       </div>
     </section>
     <section class="register">
-      <h2 class="register__headline">Register</h2>
+      <h2 class="register__headline">Registrace</h2>
+      <div class="register__container">
+        <div class="register__left">
+          <h3 class="register__left-headline">
+            Zaregistrujte se a získejte členské výhody
+          </h3>
+          <p class="register__left-description">
+            Každý zaregistrovaný člen má nižší úrokové sazby, nemusí při každé
+            další půjčce vyplňovat formulář, má možnost prodloužit období, po
+            které bude splácet. Také si u nás může půjčit rozsáhlejší finanční
+            obnos než neregistrovaný uživatel.
+          </p>
+        </div>
+        <div class="register__right">
+          <form action="/" method="post" class="register__form">
+            <div class="register__inputs-container">
+              <input
+                class="register__input"
+                type="text"
+                id="first_name"
+                name="first_name"
+                placeholder="First Name*"
+                required
+              />
+              <input
+                class="register__input"
+                type="text"
+                id="last_name"
+                name="last_name"
+                placeholder="Last Name*"
+                required
+              />
+              <input
+                class="register__input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email*"
+                required
+              />
+              <input
+                class="register__input"
+                type="tel"
+                id="phone_number"
+                name="phone_number"
+                placeholder="Phone Number"
+              />
+              <input
+                class="register__input register__input_password"
+                type="password"
+                id="password"
+                name="password"
+                minlength="8"
+                placeholder="Password* (min. 8)"
+                required
+              />
+            </div>
+            <button class="register__button" type="submit">Register</button>
+          </form>
+        </div>
+      </div>
     </section>
-    <section class="table"></section>
+    <section class="examples">
+      <h2 class="examples__headline">Příklady půjček</h2>
+      <table class="examples__table">
+        <thead>
+          <tr>
+            <th>Půjčka</th>
+            <th>Doba splatnosti</th>
+            <th>RPSN</th>
+            <th>Poplatek</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10 000 Kč</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr>
+            <td>20 000 Kč</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr>
+            <td>50 000 Kč</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr>
+            <td>100 000 Kč</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <footer class="footer">
+      <div class="footer__upper">
+        <img
+          class="footer__logo"
+          src="img/logo-cool-credit.dfbe1766.svg"
+          alt="cool credit logo"
+        />
+        <span class="footer__phone"
+          ><a href="tel:226 219 946">226 219 946</a></span
+        >
+        <span class="footer__email"
+          ><a href="mailto: info@coolcredit.cz">info@coolcredit.cz</a></span
+        >
+      </div>
+      <nav class="footer__nav">
+        <a href="#">Informace</a>
+        <a href="#">O nás</a>
+        <a href="#">Dokumenty</a>
+        <a href="#">Naše půjčky</a>
+      </nav>
+    </footer>
   </body>
 </html>

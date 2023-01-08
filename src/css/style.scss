@@ -1,11 +1,39 @@
 // font family
 $font-primary: Montserrat, sans-serif;
+
 // colors
 $color-primary: #81007f;
 $color-secondary: #80007e;
 $color-tertiary: #70b635;
 $color-desc: #707070;
 $color-button: #c32d2c;
+$color-footer: #f4f5f8;
+
+// mixins
+@mixin button {
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: $font-primary;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem;
+  text-transform: uppercase;
+  width: 25%;
+  box-shadow: 0 12px 20px rgb(0 0 0 / 20%);
+  color: #fff;
+}
+
+@mixin headline {
+  color: $color-tertiary;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -34,6 +62,7 @@ body {
   background-color: rgba(255, 255, 255, 0.4);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
+  z-index: 1000;
 }
 
 .header__nav {
@@ -54,9 +83,6 @@ body {
   // padding-bottom: 3rem;
 }
 .hero__content {
-  // background-color: #fff;
-  // border-radius: 15px;
-  // box-shadow: 0 12px 20px rgb(0 0 0 / 20%);
   display: flex;
   flex-direction: column;
   gap: 4.5rem;
@@ -76,26 +102,13 @@ body {
   font-weight: 500;
   line-height: 1.8rem;
   width: 80%;
-
-  // background-color: #fff;
-  // border-radius: 15px;
-  // box-shadow: 0 12px 20px rgb(0 0 0 / 20%);
 }
 .hero__button-container {
   display: flex;
   gap: 2rem;
 }
 .hero__button {
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-family: $font-primary;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 1rem;
-  text-transform: uppercase;
-  width: 20%;
-  box-shadow: 0 12px 20px rgb(0 0 0 / 20%);
+  @include button();
 
   & a {
     color: white;
@@ -113,18 +126,12 @@ body {
 .gallery {
   width: 100%;
   border-top: 1px solid $color-secondary;
-  margin-top: 2rem;
+  margin-top: 4rem;
   padding-top: 3rem;
 }
 
 .gallery__headline {
-  color: $color-tertiary;
-  text-transform: uppercase;
-  font-size: 2.5rem;
-  width: 80%;
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 1.5rem;
+  @include headline();
 }
 
 .gallery__text {
@@ -194,16 +201,164 @@ body {
 .register {
   width: 100%;
   border-top: 1px solid $color-secondary;
-  margin-top: 2rem;
+  margin-top: 4rem;
   padding-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .register__headline {
-  color: $color-tertiary;
+  @include headline();
+}
+
+.register__container {
+  display: flex;
+  margin: 0 5%;
+  gap: 3rem;
+  align-items: center;
+}
+
+.register__left {
+  width: 50%;
+}
+
+.register__left-description {
+  color: $color-desc;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.8rem;
+}
+
+.register__left-headline {
+  color: $color-secondary;
   text-transform: uppercase;
-  font-size: 2.5rem;
-  width: 80%;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.register__form {
+  background-color: $color-tertiary;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 12px 20px rgb(0 0 0 / 20%);
+  width: 100%;
   text-align: center;
-  margin: 0 auto;
-  margin-bottom: 1.5rem;
+}
+
+.register__inputs-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.register__input {
+  min-width: 40%;
+
+  margin: 1.4rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  height: 2rem;
+
+  &::placeholder {
+    color: #fff;
+    font-size: 1.3rem;
+  }
+
+  &:-webkit-autofill {
+    box-shadow: 0 0 0 1000px $color-tertiary inset !important;
+    -webkit-box-shadow: 0 0 0 1000px $color-tertiary inset !important;
+    -webkit-text-fill-color: white !important;
+  }
+}
+
+.register__button {
+  @include button();
+  background-color: #c32d2c;
+  margin-top: 2rem;
+}
+
+// ------------------------------------------------- TABLE SECTION -------------------------------------------------
+.examples {
+  width: 100%;
+  border-top: 1px solid $color-secondary;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.examples__headline {
+  @include headline();
+}
+
+.examples__table {
+  width: 90%;
+  background-color: #ffffff;
+  border-collapse: collapse;
+  border: 1px solid $color-secondary;
+  color: #000000;
+  margin: 0 5%;
+  box-shadow: 0 12px 20px rgb(0 0 0 / 20%);
+}
+
+.examples__table td,
+.examples__table th {
+  border-width: 1px;
+  border-color: #80007e;
+  border-style: solid;
+  padding: 1rem;
+  width: 25%;
+}
+
+.examples__table th {
+  text-transform: uppercase;
+}
+
+.examples__table thead {
+  background-color: #80007e;
+  color: #fff;
+}
+
+// ------------------------------------------------- FOOTER SECTION -------------------------------------------------
+
+.footer {
+  width: 100%;
+  border-top: 1px solid $color-secondary;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  background-color: $color-footer;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.footer__upper {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 2rem;
+
+  & a {
+    color: $color-secondary;
+    text-decoration: none;
+  }
+}
+
+.footer__nav {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+
+  & a {
+    text-decoration: none;
+    color: $color-tertiary;
+  }
 }
