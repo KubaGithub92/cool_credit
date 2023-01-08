@@ -80,7 +80,6 @@ body {
   display: flex;
   height: 100vh;
   width: 100%;
-  // padding-bottom: 3rem;
 }
 .hero__content {
   display: flex;
@@ -148,6 +147,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2rem;
   margin: 0 5%;
+  justify-items: center;
 }
 
 .gallery__image-wrapper {
@@ -360,5 +360,186 @@ body {
   & a {
     text-decoration: none;
     color: $color-tertiary;
+  }
+}
+
+// ---------------------------------------------- MEDIA QUERIES SCREEN RESOLUTION BELOw 1920px  ----------------------------------------------
+
+@media (max-width: 1920px) {
+  .gallery__images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin: 0 5%;
+  }
+}
+
+// ---------------------------------------------- MEDIA QUERIES SCREEN RESOLUTION BELOw 1400px  ----------------------------------------------
+
+@media (max-width: 1400px) {
+  .gallery__images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 0 5%;
+  }
+
+  .gallery__image-wrapper {
+    width: 480px;
+  }
+
+  .gallery__text {
+    width: 80%;
+  }
+}
+
+// ---------------------------------------------- MEDIA QUERIES SCREEN RESOLUTION BELOw 1280px  ----------------------------------------------
+
+@media (max-width: 1280px) {
+  .hero__description {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    width: 60%;
+  }
+}
+
+// ---------------------------------------------- MEDIA QUERIES SCREEN RESOLUTION BELOw 1100px  ----------------------------------------------
+
+@media (max-width: 1100px) {
+  .hero {
+    background: url("../img/snowflakes.b4349a8e.webp");
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+  }
+
+  .hero__content {
+    background-color: #fff;
+    padding: 3rem;
+    width: 90%;
+    margin: 0 5%;
+    box-shadow: 0 12px 20px rgb(0 0 0 / 20%);
+    border-radius: 8px;
+  }
+
+  .hero__description {
+    width: 90%;
+  }
+
+  .gallery__image-wrapper {
+    width: 400px;
+  }
+
+  .register__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .register__left-headline {
+    text-align: center;
+  }
+
+  .register__left {
+    width: 90%;
+  }
+}
+
+// ---------------------------------------------- MEDIA QUERIES SCREEN RESOLUTION BELOw 950px  ----------------------------------------------
+
+@media (max-width: 950px) {
+  .gallery__headline,
+  .register__headline,
+  .examples__headline {
+    font-size: 1.5rem;
+  }
+  .hero__content {
+    gap: 1rem;
+    line-height: 1;
+  }
+
+  .hero__headline {
+    font-size: 1.8rem;
+  }
+
+  .hero__description {
+    font-size: 1.1rem;
+  }
+
+  .gallery__images {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 0 5%;
+  }
+
+  .gallery__image-wrapper {
+    width: 480px;
+  }
+
+  .footer {
+    flex-direction: row;
+  }
+
+  .footer__nav {
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .footer__upper {
+    width: 100%;
+    flex-direction: column;
+    margin: 0;
+    gap: 1rem;
+  }
+}
+
+// ---------------------------------------------- MEDIA QUERIES SCREEN RESOLUTION BELOw 568px  ----------------------------------------------
+
+@media (max-width: 568px) {
+  .hero__button {
+    width: 40%;
+  }
+
+  .hero__description {
+    line-height: 1;
+  }
+
+  .gallery__image-wrapper {
+    width: 400px;
+  }
+
+  .register__input {
+    width: 90%;
+  }
+
+  .register__button {
+    width: 50%;
+  }
+
+  .examples__table {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+// ---------------------------------------------- MEDIA QUERIES SCREEN RESOLUTION BELOw 470px  ----------------------------------------------
+
+@media (max-width: 470px) {
+  .gallery__image-wrapper {
+    width: 350px;
+  }
+
+  .examples__table {
+    margin: 0 auto;
+  }
+
+  .examples__table td,
+  .examples__table th {
+    padding: 10px 5px;
   }
 }
