@@ -1,3 +1,209 @@
+// font family
+$font-primary: Montserrat, sans-serif;
+// colors
 $color-primary: #81007f;
 $color-secondary: #80007e;
 $color-tertiary: #70b635;
+$color-desc: #707070;
+$color-button: #c32d2c;
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: $font-primary;
+}
+
+// ------------------------------------------------- HEADER -------------------------------------------------
+
+.header__content {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1.5rem 3rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.header__nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+// ------------------------------------------------- HERO SECTION -------------------------------------------------
+.hero {
+  align-items: center;
+  background-image: url("../img/hero_winter_2022.898df476.webp");
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  // padding-bottom: 3rem;
+}
+.hero__content {
+  // background-color: #fff;
+  // border-radius: 15px;
+  // box-shadow: 0 12px 20px rgb(0 0 0 / 20%);
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+  margin-left: 5%;
+  // padding: 1.5rem;
+  width: 60%;
+}
+.hero__headline {
+  color: #80007e;
+  font-size: 2.8rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+.hero__description {
+  color: $color-desc;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.8rem;
+  width: 80%;
+
+  // background-color: #fff;
+  // border-radius: 15px;
+  // box-shadow: 0 12px 20px rgb(0 0 0 / 20%);
+}
+.hero__button-container {
+  display: flex;
+  gap: 2rem;
+}
+.hero__button {
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: $font-primary;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem;
+  text-transform: uppercase;
+  width: 20%;
+  box-shadow: 0 12px 20px rgb(0 0 0 / 20%);
+
+  & a {
+    color: white;
+    text-decoration: none;
+  }
+  &_join {
+    background-color: $color-button;
+  }
+  &_more {
+    background-color: $color-tertiary;
+  }
+}
+
+// ------------------------------------------------- GALLERY SECTION -------------------------------------------------
+.gallery {
+  width: 100%;
+  border-top: 1px solid $color-secondary;
+  margin-top: 2rem;
+  padding-top: 3rem;
+}
+
+.gallery__headline {
+  color: $color-tertiary;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+
+.gallery__text {
+  color: #707070;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.8rem;
+  width: 60%;
+  margin: 0 auto 2rem;
+}
+
+.gallery__images {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  margin: 0 5%;
+}
+
+.gallery__image-wrapper {
+  width: 400px;
+  height: 235px;
+  overflow: hidden;
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.gallery__image-item {
+  width: 100%;
+}
+
+.gallery__image-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0);
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  transition: opacity 0.5s ease-in;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.gallery__image-content {
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.image-content__headline {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+// ------------------------------------------------- REGISTER SECTION -------------------------------------------------
+.register {
+  width: 100%;
+  border-top: 1px solid $color-secondary;
+  margin-top: 2rem;
+  padding-top: 3rem;
+}
+
+.register__headline {
+  color: $color-tertiary;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
