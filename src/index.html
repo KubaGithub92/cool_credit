@@ -27,18 +27,31 @@
   <body>
     <header class="header">
       <div class="header__content">
-        <img src="./img/logo-cool-credit.dfbe1766.svg" alt="cool credit logo" />
+        <div class="header__top">
+          <img
+            src="./img/logo-cool-credit.dfbe1766.svg"
+            alt="cool credit logo"
+          />
 
-        <button class="header__button-nav">
-          <ion-icon name="menu-outline" class="icon-mobile-nav"></ion-icon>
-          <ion-icon name="close-outline" class="icon-mobile-nav"></ion-icon>
-        </button>
+          <button class="header__button-nav">
+            <ion-icon
+              name="menu-outline"
+              class="header__button-icon"
+            ></ion-icon>
+            <ion-icon
+              name="close-outline"
+              class="header__button-icon"
+            ></ion-icon>
+          </button>
+        </div>
 
-        <!-- <nav class="header__nav">
-          <a class="header__nav-link" href="#">Gallery</a>
-          <a class="header__nav-link" href="#">Sign up</a>
-          <a class="header__nav-link" href="#">Overview</a>
-        </nav> -->
+        <nav class="header__nav">
+          <a class="header__nav-link" href="#gallery">Půjčka na cokoliv</a>
+          <a class="header__nav-link" href="#register"
+            >Registruj se a získej výhody</a
+          >
+          <a class="header__nav-link" href="#examples">Příklady půjček</a>
+        </nav>
       </div>
     </header>
     <section class="hero">
@@ -62,7 +75,7 @@
         </div>
       </div>
     </section>
-    <section class="gallery">
+    <section class="gallery" id="gallery">
       <h2 class="gallery__headline">Půjčte si na cokoliv</h2>
       <p class="gallery__text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi et
@@ -187,7 +200,7 @@
         </div>
       </div>
     </section>
-    <section class="register">
+    <section class="register" id="register">
       <h2 class="register__headline">Registrace</h2>
       <div class="register__container">
         <div class="register__left">
@@ -250,7 +263,7 @@
         </div>
       </div>
     </section>
-    <section class="examples">
+    <section class="examples" id="examples">
       <h2 class="examples__headline">Příklady půjček</h2>
       <table class="examples__table">
         <thead>

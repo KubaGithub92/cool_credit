@@ -55,19 +55,61 @@ body {
   width: 100%;
   position: fixed;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   margin: 0 auto;
   padding: 1.5rem 3rem;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.75);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   z-index: 1000;
+  gap: 3rem;
+}
+
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__button-nav {
+  background: none;
+  border: none;
+  color: $color-secondary;
 }
 
 .header__nav {
   display: flex;
+  flex-direction: column;
   gap: 1.5rem;
+  display: none;
+}
+
+.nav-open .header__nav {
+  display: flex;
+}
+
+.header__button-icon[name="close-outline"] {
+  display: none;
+  cursor: pointer;
+}
+
+.header__button-icon[name="menu-outline"] {
+  display: block;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.nav-open .header__button-icon[name="close-outline"] {
+  display: block;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.nav-open .header__button-icon[name="menu-outline"] {
+  display: none;
+  cursor: pointer;
 }
 
 // ------------------------------------------------- HERO SECTION -------------------------------------------------
@@ -294,10 +336,10 @@ body {
 
 .examples__table {
   width: 90%;
-  background-color: #ffffff;
+  background-color: #fff;
   border-collapse: collapse;
   border: 1px solid $color-secondary;
-  color: #000000;
+  color: #000;
   margin: 0 5%;
   box-shadow: 0 12px 20px rgb(0 0 0 / 20%);
 }
@@ -305,7 +347,7 @@ body {
 .examples__table td,
 .examples__table th {
   border-width: 1px;
-  border-color: #80007e;
+  border-color: $color-secondary;
   border-style: solid;
   padding: 1rem;
   width: 25%;
@@ -316,7 +358,7 @@ body {
 }
 
 .examples__table thead {
-  background-color: #80007e;
+  background-color: $color-secondary;
   color: #fff;
 }
 
@@ -377,6 +419,9 @@ body {
 // ---------------------------------------------- MEDIA QUERIES SCREEN RESOLUTION BELOw 1400px  ----------------------------------------------
 
 @media (max-width: 1400px) {
+  .hero__content {
+    gap: 2rem;
+  }
   .gallery__images {
     display: grid;
     grid-template-columns: 1fr 1fr;
