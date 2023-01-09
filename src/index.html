@@ -47,9 +47,7 @@
 
         <nav class="header__nav">
           <a class="header__nav-link" href="#gallery">Půjčka na cokoliv</a>
-          <a class="header__nav-link" href="#register"
-            >Registruj se a získej výhody</a
-          >
+          <a class="header__nav-link" href="#register">Registrace</a>
           <a class="header__nav-link" href="#examples">Příklady půjček</a>
         </nav>
       </div>
@@ -67,7 +65,7 @@
         </p>
         <div class="hero__button-container">
           <button class="hero__button hero__button_join">
-            <a href="#">Join Today</a>
+            <a href="#register">Join Today</a>
           </button>
           <button class="hero__button hero__button_more">
             <a href="#">Learn More</a>
@@ -223,7 +221,6 @@
                 id="first_name"
                 name="first_name"
                 placeholder="First Name*"
-                required
               />
               <input
                 class="register__input"
@@ -231,15 +228,13 @@
                 id="last_name"
                 name="last_name"
                 placeholder="Last Name*"
-                required
               />
               <input
                 class="register__input"
-                type="email"
+                type="text"
                 id="email"
                 name="email"
                 placeholder="Email*"
-                required
               />
               <input
                 class="register__input"
@@ -253,10 +248,9 @@
                 type="password"
                 id="password"
                 name="password"
-                minlength="8"
                 placeholder="Password* (min. 8)"
-                required
               />
+              <div class="register__error"></div>
             </div>
             <button class="register__button" type="submit">Register</button>
           </form>
